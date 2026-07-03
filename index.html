@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelpDesk IT — Sistem Pengajuan Layanan</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo"><i class="fas fa-headset"></i> HelpDesk IT</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#pengajuan">Pengajuan</a></li>
+        <li><a href="#riwayat">Riwayat</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="beranda" class="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-tag">Sistem Pengajuan Layanan</p>
+      <h1 class="hero-title">HELPDESK<br><span class="accent">IT</span></h1>
+      <p class="hero-desc">
+        Ajukan permintaan layanan IT dengan mudah dan lihat seluruh riwayat pengajuan
+        secara langsung pada tabel.
+      </p>
+      <button class="btn-primary" onclick="scrollToSection('#pengajuan')">
+        <i class="fas fa-paper-plane"></i> Ajukan Sekarang
+      </button>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-target="5">0</span>
+          <span class="stat-label">Layanan</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="250">0</span>
+          <span class="stat-label">Pengajuan</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-target="98">0</span>
+          <span class="stat-label">% Selesai</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Form Pengajuan -->
+  <section id="pengajuan" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Form <span class="accent">Pengajuan</span></h2>
+        <p>Silakan isi data pengajuan layanan IT.</p>
+      </div>
+
+      <form class="service-form" id="serviceForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nama</label>
+            <input type="text" id="nama" placeholder="Masukkan nama" required>
+          </div>
+
+          <div class="form-group">
+            <label>Divisi</label>
+            <input type="text" id="divisi" placeholder="Masukkan divisi" required>
+          </div>
+
+          <div class="form-group">
+            <label>Jenis Layanan</label>
+            <select id="layanan" required>
+              <option value="">-- Pilih Layanan --</option>
+              <option>Reset Password</option>
+              <option>Instal Software</option>
+              <option>Perbaikan Komputer</option>
+              <option>Perbaikan Printer</option>
+              <option>Upgrade Hardware</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Prioritas</label>
+            <select id="prioritas" required>
+              <option value="">-- Pilih Prioritas --</option>
+              <option>Tinggi</option>
+              <option>Sedang</option>
+              <option>Rendah</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label>Deskripsi Masalah</label>
+            <textarea id="deskripsi" rows="5" placeholder="Tuliskan masalah..." required></textarea>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-paper-plane"></i> Kirim Pengajuan
+          </button>
+          <button type="reset" class="btn-outline">
+            <i class="fas fa-rotate-left"></i> Reset
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Riwayat Pengajuan -->
+  <section id="riwayat" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Riwayat <span class="accent">Pengajuan</span></h2>
+        <p>Data pengajuan akan ditampilkan pada tabel berikut.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Divisi</th>
+              <th>Layanan</th>
+              <th>Prioritas</th>
+              <th>Deskripsi</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Data JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo"><i class="fas fa-headset"></i> HelpDesk IT</a>
+        <p>Sistem Pengajuan Layanan IT berbasis HTML, CSS, dan JavaScript.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <p>Reset Password</p>
+        <p>Instal Software</p>
+        <p>Perbaikan Komputer</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <p><i class="fas fa-phone"></i> 0812-3456-7890</p>
+        <p><i class="fas fa-envelope"></i> helpdesk@email.com</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Ikuti Kami</h4>
+        <div class="social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 HelpDesk IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast-box" id="toastBox"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
